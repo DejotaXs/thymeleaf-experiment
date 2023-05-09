@@ -1,0 +1,1 @@
+INSERT INTO TASK_TABLE(name, date) VALUES ('John Doe', '01/01/2000')
