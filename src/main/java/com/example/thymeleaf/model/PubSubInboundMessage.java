@@ -15,26 +15,39 @@ public class PubSubInboundMessage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String location;
 
-    @Lob
-    private String messageBody;
+    private String location;
 
     @Column(name = "messageid")
     private String messageId;
+
     private String messageType;
+
     private String organisation;
+
     private String status;
+
     @Column(name = "\"user\"")
     private String user;
+
     private String createdAt;
+
     private Boolean deleted;
+
     @Column(name = "errorid")
     private Long errorId;
+
     private String keyField;
+
     private Boolean matched;
+
     @Column(name = "successid")
     private Long successId;
+
     private Boolean successful;
+
     private Boolean unsuccessful;
+
+    @Lob
+    private String messageBody;
 }

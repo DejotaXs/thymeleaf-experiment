@@ -15,17 +15,27 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col"></th>
-        <th scope="col">Task Name</th>
-        <th scope="col">Execution Date</th>
+        <th scope="col">ID</th>
+        <th scope="col">Location</th>
+        <th scope="col">Message ID</th>
+        <th scope="col">Message Type</th>
+        <th scope="col">Organisation</th>
+        <th scope="col">Status</th>
+        <th scope="col">User</th>
+        <th scope="col">Creation Date</th>
     </tr>
     </thead>
 
     <tbody>
-    <tr data-th-each="task : ${tasks}">
-        <td data-th-text="${task.id}"></td>
-        <td data-th-text="${task.name}"></td>
-        <td data-th-text="${task.date}"></td>
+    <tr data-th-each="message : ${messages}">
+        <td data-th-text="${message.id}"></td>
+        <td data-th-text="${message.location}"></td>
+        <td data-th-text="${message.messageId}"></td>
+        <td data-th-text="${message.messageType}"></td>
+        <td data-th-text="${message.organisation}"></td>
+        <td data-th-text="${message.status}"></td>
+        <td data-th-text="${message.user}"></td>
+        <td data-th-text="${message.createdAt}"></td>
     </tr>
     </tbody>
 </table>
