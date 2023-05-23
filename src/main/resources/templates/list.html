@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-
     <link rel="stylesheet" href="css/style.css">
-
     <title>Task list</title>
-
+    <style>
+</style>
 </head>
 <body>
+<div th:if="${userName != null}">
+    <h3>Logged in as
+        <span th:text="${userName}" style="color: red"/>
+    </h3>
+
+</div>
+<div th:if="${userName == null}">
+    <h1>Anonymous user please authenticate.</h1>
+    <h1><a href="/login">Login </a></h1>
+</div>
 <table class="table">
     <thead>
     <tr>
@@ -21,11 +29,10 @@
         <th scope="col">Message Type</th>
         <th scope="col">Organisation</th>
         <th scope="col">Status</th>
-        <th scope="col">User</th>
+        <th scope="col">Key Field</th>
         <th scope="col">Creation Date</th>
     </tr>
     </thead>
-
     <tbody>
     <tr data-th-each="message : ${messages}">
         <td data-th-text="${message.id}"></td>
@@ -34,12 +41,13 @@
         <td data-th-text="${message.messageType}"></td>
         <td data-th-text="${message.organisation}"></td>
         <td data-th-text="${message.status}"></td>
-        <td data-th-text="${message.user}"></td>
+        <td data-th-text="${message.keyField}"></td>
         <td data-th-text="${message.createdAt}"></td>
     </tr>
     </tbody>
 </table>
-
-<a href="/create">Record</a>
+<h3>
+    <a href="/logout" >Logout</a>
+</h3>
 </body>
 </html>

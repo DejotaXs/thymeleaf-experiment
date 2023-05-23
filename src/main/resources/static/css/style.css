@@ -1,3 +1,8 @@
 body{
     padding: 10pxS
 }
+
+h3.pos_right {
+  position: relative;
+  left: 90px;
+}
